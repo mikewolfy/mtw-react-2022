@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Stock from './Stock';
 
 function Hello(props) {
   return <h1>Hello World!</h1>
@@ -11,7 +12,7 @@ function Hello(props) {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Hello />
+    <App /><Stock />
   </React.StrictMode>
 );
 
