@@ -41,6 +41,6 @@ class Stock {
   }
 }
 
-const appl = new Stock("AAPL");
+// const appl = new Stock("AAPL");
 
 export default App;
