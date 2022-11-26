@@ -30,16 +30,16 @@ function App() {
 //   );
 // }
 
-class Stock {
-  constructor(ticker, price) {
-    this.ticker = ticker;
-    this.price = price;
-  }
-
-  priceString() {
-    return this.ticker + "'s price is " + this.price;
-  }
-}
+// class Stock {
+//   constructor(ticker, price) {
+//     this.ticker = ticker;
+//     this.price = price;
+//   }
+// 
+//   priceString() {
+//     return this.ticker + "'s price is " + this.price;
+//   }
+// }
 
 // const appl = new Stock("AAPL");
 
