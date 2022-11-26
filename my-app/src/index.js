@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Stock from './Stock';
+
+// function Hello(props) {
+//   return <h1>Hello World!</h1>
+// }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App /><Stock />
   </React.StrictMode>
 );
 
