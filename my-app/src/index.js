@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Stock from './Stock';
+import StockComponent from './StockComponent';
 
 // function Hello(props) {
 //   return <h1>Hello World!</h1>
@@ -12,7 +13,7 @@ import Stock from './Stock';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App /><Stock />
+    <App /><Stock /><StockComponent />
   </React.StrictMode>
 );
 
