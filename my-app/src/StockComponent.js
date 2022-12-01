@@ -1,5 +1,5 @@
 //https://reactjs.org/docs/faq-ajax.html
-import React, { Component } from 'react';
+import React from 'react';
 
 class StockComponent extends React.Component {
     constructor(props) {
@@ -41,30 +41,32 @@ class StockComponent extends React.Component {
         return <div>Loading...</div>;
       } else {
         return (
-          <table class="table">
-            <thead>
-              <tr>
-                  <th>Ticker</th>
-                  <th>Name</th>
-                  <th>Sector</th>
-                  <th>Price</th>
-                  <th>PE</th>
-                  <th>Daily Change</th>
-              </tr>
-            </thead>
-            <tbody>
-              {items.map(item => (
+          <div align="center">
+            <table class="table">
+              <thead>
                 <tr>
-                  <td>{item.ticker}</td>
-                  <td>{item.name}</td>
-                  <td>{item.industry}</td>
-                  <td>{item.price}</td>
-                  <td>{item.metrics.pe}</td>
-                  <td>{item.dailyPercentChange}</td>
+                    <th width="150px">Ticker</th>
+                    <th width="250px">Name</th>
+                    <th width="200px">Sector</th>
+                    <th width="100px">Price</th>
+                    <th width="100px">PE</th>
+                    <th width="100px">Daily Change</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {items.map(item => (
+                  <tr>
+                    <td align="center">{item.ticker}</td>
+                    <td align="center">{item.name}</td>
+                    <td align="center">{item.industry}</td>
+                    <td align="center">${item.price}</td>
+                    <td align="center">{item.metrics.pe}</td>
+                    <td align="center">{item.dailyPercentChange}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         );
       }
     }
