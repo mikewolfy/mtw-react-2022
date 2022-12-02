@@ -1,5 +1,6 @@
 //https://reactjs.org/docs/faq-ajax.html
 import React from 'react';
+import './StockComponent.css';
 
 class StockComponent extends React.Component {
     constructor(props) {
@@ -36,13 +37,13 @@ class StockComponent extends React.Component {
     render() {
       const { error, isLoaded, items } = this.state;
       if (error) {
-        return <div>Error: {error.message}</div>;
+        return <div>Error: {error.message}</div>
       } else if (!isLoaded) {
-        return <div align="center"><h2>Loading...</h2></div>;
+        return <div align="center"><h2>Loading...</h2></div>
       } else {
         return (
           <div align="center">
-            <table class="table">
+            <table className="table">
               <thead>
                 <tr>
                     <th width="150px">Ticker</th>
@@ -50,24 +51,30 @@ class StockComponent extends React.Component {
                     <th width="200px">Sector</th>
                     <th width="100px">Price</th>
                     <th width="100px">PE</th>
+                    <th width="100px">52Low</th>
+                    <th width="100px">52High</th>
+                    <th width="100px">Beta</th>
                     <th width="100px">Daily Change</th>
                 </tr>
               </thead>
               <tbody>
                 {items.map(item => (
-                  <tr>
+                  <tr key={item.ticker}>
                     <td align="center">{item.ticker}</td>
                     <td align="center">{item.name}</td>
                     <td align="center">{item.industry}</td>
                     <td align="center">${item.price}</td>
                     <td align="center">{item.metrics.pe}</td>
+                    <td align="center">${item.metrics.weekLow52}</td>
+                    <td align="center">${item.metrics.weekHigh52}</td>
+                    <td align="center">${item.metrics.beta}</td>
                     <td align="center">{item.dailyPercentChange}%</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-        );
+        )
       }
     }
   }
