@@ -9,9 +9,10 @@ class StockComponent extends React.Component {
         error: null,
         isLoaded: false,
         items: [],
-        sortTickerAsc: true,
+        sortTickerAsc: false,
         sortDailyChangeAsc: true,
-        sortBetaAsc: true
+        sortBetaAsc: true,
+        sortPEAsc: true
       };
     }
   
@@ -53,7 +54,7 @@ class StockComponent extends React.Component {
                     <th width="250px">Name</th>
                     <th width="200px">Sector</th>
                     <th width="100px">Price</th>
-                    <th width="100px">PE</th>
+                    <th width="100px"><label onClick={() => this.orderPE()}>PE</label></th>
                     <th width="100px">52Low</th>
                     <th width="100px">52High</th>
                     <th width="100px"><label onClick={() => this.orderBeta()}>Beta</label></th>
@@ -145,6 +146,28 @@ class StockComponent extends React.Component {
         })
       });
       this.setState({ sortBetaAsc: !this.state.sortBetaAsc });
+    }
+
+    orderPE() {
+      this.setState({
+        items: this.state.items.sort((a, b) => {
+
+          var asc = -1;
+          if (this.state.sortPEAsc)
+          {
+            asc = 1;
+          }
+
+          if (a.metrics.pe < b.metrics.pe) {
+            return -1 * asc;
+          }
+          if (a.metrics.pe > b.metrics.pe) {
+            return 1 * asc;
+          }
+          return 0;
+        })
+      });
+      this.setState({ sortPEAsc: !this.state.sortPEAsc });
     }
 
   }
